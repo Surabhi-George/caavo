@@ -1,0 +1,191 @@
+/* You can add global styles to this file, and also import other style files */
+$primary-font: 14px
+$primary-color: #005840
+$primary-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+$pad30: 30px
+$mrgbtm30: 30px
+
+body 
+    font-family: $primary-font-family
+    font-size: 14px
+    color: #333
+    box-sizing: border-box
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    margin: 0
+    font-size: $primary-font
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 
+    margin: 0
+    font-weight: 400
+h4
+    font-size: 20px
+p 
+    margin: 0
+a:hover
+    cursor: pointer
+ul 
+    margin: 0
+    padding: 0
+    li 
+        list-style-type: none
+.text-center
+    text-align: center
+
+.text-right
+    text-align: right
+
+.container
+    width : 1170px
+    padding-right: 15px
+    padding-left: 15px
+    margin-right: auto
+    margin-left: auto
+    max-width: 100%
+
+.btn 
+    cursor: pointer
+    border: 0
+    padding: 10px 20px
+    border-radius: 6px
+    color: #fff
+    font-size: 16px
+    outline: none
+
+.btn-primary
+    background: $primary-color
+
+.btn-danger
+    background: #a90101
+
+.error
+    color: red
+.pd30
+    padding: $pad30
+.mb30
+    margin-bottom: $mrgbtm30
+.mb20
+    margin-bottom: 20px
+.mb10
+    margin-bottom: 10px
+.mr10
+    margin-right: 10px
+.w100
+    width: 100%
+
+.ug-flex
+    display: flex
+
+.ug-flex-ai-center
+    align-items: center
+.ug-flex-jc-end
+    justify-content: flex-end !important
+.ug-popup
+    background: #1a1f22
+    position: fixed
+    z-index: 9999
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    color: #fff
+    padding: $pad30
+    overflow: hidden
+    overflow-y: scroll
+
+.ug-close
+    position: absolute
+    right: 30px
+    top: 30px
+    width: 16px
+    cursor: pointer
+
+.form-group
+    margin-bottom: 20px
+    display: flex
+    align-items: center
+    justify-content: start
+
+    input,textarea,select
+        border: 1px solid #666
+        padding: 10px 15px
+        min-height: 35px
+        border-radius: 4px
+        box-shadow: none
+        outline: none
+        font-family: $primary-font-family
+        font-size: $primary-font
+        width: 100%
+        background: transparent
+        color: #fff
+    label
+        min-width: 140px
+        
+.ug-chk-container 
+    display: block
+    position: relative
+    cursor: pointer
+
+.ug-chk-container input 
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    height: 0
+    width: 0
+
+
+.checkmark 
+    position: absolute
+    top: 0
+    left: 0
+    height: 20px
+    width: 20px
+    background-color: #eee
+
+.ug-chk-container input:checked ~ .checkmark 
+    background-color: #2196F3
+
+.checkmark:after 
+    content: ""
+    position: absolute
+    display: none
+
+.ug-chk-container input:checked ~ .checkmark:after 
+    display: block
+
+.ug-chk-container .checkmark:after 
+    left: 7px
+    top: 3px
+    width: 5px
+    height: 10px
+    border: solid white
+    border-width: 0 1px 1px 0
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg)
+
+select:required:invalid 
+  color: gray
+
+option[value=""][disabled] 
+  display: none
+
+option 
+  color: black
+.ng-top-translate 
+    transform: translateY(0px)
+    transition: all .5s
+
+.ng-top-translate:hover
+    transform: translateY(-5px)
+
+@media (max-width: 768px)
+    .ug-popup
+        padding: 20px
+    .form-group label 
+        min-width: 85px
+    

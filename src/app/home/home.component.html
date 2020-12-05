@@ -1,0 +1,78 @@
+<section>
+    <div class="container">
+        <div class="ug-group mb30">
+            <h4 class="mb10">Create Group</h4>
+            <p class="mb20">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>
+            <button class="btn btn-primary" (click)="openPopup()">Create</button>
+        </div>
+        
+        <div class="pd30" style="background: #2b3c46;color: #ffffff;" *ngIf="groupname && description && values">
+            <h4 class="mb20">Details</h4>
+            <div class="ug-group-logo" [style.background-image]="'url('+ imageSrc +')'">
+            </div>
+            <p>Group name: {{groupname}}</p>
+            <p>Group Description: {{description}}</p>
+            <p>Users: {{values|json}}</p>
+        </div>
+    </div>
+</section>
+
+<div class="ug-popup" *ngIf="isShow">
+    <img src="assets/img/close.png" class="ug-close" (click)="closePopup()" width="16" alt="Close icon" />
+    <div class="ug-popup-content">
+        <div class="text-center">
+            <h4 class="mb30">Create Group</h4>
+        </div>
+        <div class="ug-flex">
+            <div>
+                <div class="ug-group-logo" [style.background-image]="'url('+ imageSrc +')'">
+                </div>
+                <div class="ug-upload">
+                    <a class="ug-flex ug-flex-ai-center"><img src="assets/img/upload.png" width="20" alt="The icon for upload group logo" />Upload logo</a>
+                    <input name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+                </div>
+            </div>
+            <div class="w100">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Group Name" [(ngModel)]="groupname" />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea placeholder="Group Description" rows="3" [(ngModel)]="description" ></textarea>
+                </div>
+                <div class="error text-right" *ngIf="error">
+                    {{error}}
+                </div>
+            </div>
+        </div>
+        <div class="mb30">
+            <div class="form-group ug-flex-jc-end">
+                <label>Sort by: </label>
+                <select #sortSelect (change)="onOptionsSelected(sortSelect.value)">  
+                    <option value="" disabled selected>Select</option>         
+                    <option *ngFor="let option of dropDownData" [value]="option.value">{{option.name}}</option> 
+                </select>            
+            </div>
+            
+
+            <ul class="ug-user-list">
+                <li *ngFor="let data of userData">
+                    <label class="ug-chk-container">
+                        <div class="ug-bg ng-top-translate" [style.background-image]="'url('+ data.Image +')'">
+                            <div>
+                                <input type="checkbox" [(ngModel)]="data.isChecked" name="{{data.name}"  id="{{data.name}}">
+                                <span class="checkmark"></span>
+                            </div>                                
+                            <p class="ug-name">{{data.name}}</p>
+                        </div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="text-center mb30">
+            <button class="btn btn-primary mr10" (click)="createGroup()">Update</button>
+            <button class="btn btn-danger" (click)="closePopup()">Remove</button>
+        </div>
+    </div>
+</div>

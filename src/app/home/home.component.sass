@@ -1,0 +1,89 @@
+.container
+    padding: 100px 0
+    min-height: calc(100vh - 300px)
+
+.ug-group
+    padding: 50px
+    text-align: center
+    background: #ececec
+
+.ug-popup-content
+    max-width: 765px
+    margin: 0 auto
+.ug-flex
+    img
+        margin-right: 10px
+.ug-group-logo
+    background: #333
+    background-image: url('/assets/img/dummy.png')
+    width: 125px
+    height: 125px
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    margin-right: 20px
+    margin-bottom: 10px
+
+.ug-user-list 
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin-left: -5px
+    margin-right: -5px
+    li
+        padding: 5px
+    .ug-bg
+        width: 145px
+        height: 145px
+        border-radius: 6px
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        background-color: #333333
+        display: flex
+        align-items: flex-end
+        position: relative
+        .ug-name
+            width: 100%
+            background: #005840
+            color: white
+            padding: 5px
+            border-bottom-left-radius: 6px
+            border-bottom-right-radius: 6px
+            text-align: center
+.ug-chk
+    position: absolute
+    top: 5px
+    right: 25px
+
+.checkmark 
+    position: absolute
+    top: 5px
+    right: 5px
+    left: auto
+    background-color: transparent
+.ug-upload
+    position: relative
+    input
+        position: absolute
+        top: 0
+        opacity: 0
+        cursor: pointer
+select
+    max-width: 200px
+
+@media(max-width: 767px)
+    .ug-flex 
+        display: flex
+        flex-wrap: wrap
+    .container
+        padding: 60px 0
+        min-height: calc(100vh - 120px)
+    .ug-user-list 
+        .ug-bg
+            width: 135px
+    .ug-popup-content 
+        .w100
+            margin-top: 30px
+    select
+        max-width: initial
