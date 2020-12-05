@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Clone the repo
 
-#### git clone https://github.com/Surabhi-George/cavoo.git
+#### git clone https://github.com/Surabhi-George/caavo.git
 
 #### cd caavo
 
